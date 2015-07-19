@@ -35,17 +35,17 @@ var app = {
     // deviceready Event Handler
     //
     onDeviceReady: function() {
-        // add click handle for reset button
-        document.getElementById('reset').addEventListener('click', app.onResetClick, false);
+        // setup the location manager
+        app.setupLocationManager();
 
         // setup timer to update the total time in region
         setInterval(app.updateTotalTimeInRegion, 1000);
 
-        // setup the location manager
-        app.setupLocationManager();
-
         // inital update to total time in region
         app.updateTotalTimeInRegion();
+
+        // add click handle for reset button
+        document.getElementById('reset').addEventListener('click', app.onResetClick, false);
     },
     setupLocationManager: function() {
         var uuid = 'E2C56DB5-DFFB-48D2-B060-D0F5A71096E0';
@@ -85,13 +85,6 @@ var app = {
         // update the total time in region
         app.updateTotalTimeInRegion();
     },
-    onResetClick: function() {
-        // clear the total time
-        app.totalTimeInRegion = 0;
-
-        // update the total time in region
-        app.updateTotalTimeInRegion();
-    },
     updateTotalTimeInRegion: function() {
         // get the date for now
         var now = new Date();
@@ -122,5 +115,12 @@ var app = {
                                     'Seconds: ' + seconds;
 
         document.getElementById('totalTimeInRegion').textContent = totalTimeInRegionText;
+    },
+    onResetClick: function() {
+        // clear the total time
+        app.totalTimeInRegion = 0;
+
+        // update the total time in region
+        app.updateTotalTimeInRegion();
     }
 };
