@@ -50,3 +50,14 @@ To create from scratch
 phonegap create regiontimer "com.makebluetooth.regiontimer" "Region Timer"
 ```
 
+Edit ```config.xml```, change the value of ```android-minSdkVersion``` from ```7``` to ```10```:
+
+```xml
+    <preference name="android-minSdkVersion" value="7" />
+```
+
+to
+
+```xml
+    <preference name="android-minSdkVersion" value="10" />
+```
