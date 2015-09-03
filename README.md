@@ -33,7 +33,7 @@ cd regiontimer
 ```sh
 cd regiontimer
 phonegap platform add ios android
-phonegap plugin add com.unarin.cordova.beacon
+phonegap plugin add phonegap plugin add https://github.com/petermetz/cordova-plugin-ibeacon.git#3.3.0
 ```
 
 ### Running
